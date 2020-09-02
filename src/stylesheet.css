@@ -1,0 +1,490 @@
+
+.App{
+overflow: auto;
+height:100vh;
+
+display:grid;
+grid-template-rows: 100px 1fr 1fr 1fr 1fr;
+grid-template-columns: 300px 1fr 1fr 1fr 1fr;
+
+
+}
+/*#container-search{
+
+  grid-template-areas:
+  'header header header header header'
+  'sidebar search search search search'
+  'sidebar sr sr sr sr'
+  'sidebar sr sr sr sr'
+  'sidebar sr sr sr sr'
+} */
+
+
+/******************HOME/SEARCH/SIDEBAR/SEARCHRESULTS(SR)/HEADER*******************/
+.remainder{
+  grid-area: 2/1/span 5/ span 5;
+  display:grid;
+  grid-template-areas:
+  'left right';
+  grid-template-columns: 300px auto;
+}
+.App-header{
+grid-area: 1 / 1 / span 1 / span 5;
+background-color: #e2e2e2;
+border-bottom: solid black;
+text-align: center;}
+
+.Welcome{ grid-area: 2 / 1 / span 5 / span 5;}
+.SelectDish{ grid-area: 2/ 2 / span 5/ span 4;
+grid-area: right;
+ }
+
+.Sidebar{ grid-area: 3 / 1 / span 5 / span 1;
+border-right: solid black;
+grid-area: left;
+}
+.innerCont{
+  width:100%;
+  height:100%;
+  border-right: solid black;
+
+  display:grid;
+  grid-template-rows: min-content min-content min-content;
+  grid-template-columns: 100%;
+  grid-template-areas:
+  'head'
+  'mid'
+  'create'
+}
+/*****************after changes******************************/
+
+#head{grid-area:head}
+#mid{grid-area:mid}
+#create{grid-area:create}
+.pushRight{
+  float: right;
+}
+.pushLeft{
+  float: left;
+}
+.pushBot{
+  align-self: baseline;
+  vertical-align: baseline;
+}
+.buttons-img{
+  height: 40px;
+  width: 200px;
+  background-color: #ffc04d;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  color: black;
+  /*padding: 15px 32px;*/
+  /*text-align: center;*/
+  vertical-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 12px;
+}
+
+.buttonss-img{
+  height: 40px;
+  width: 150px;
+  background-color: #ffc04d;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  color: black;
+  /*padding: 15px 32px;*/
+  /*text-align: center;*/
+  vertical-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 12px;
+}
+
+.btn-txt{
+  vertical-align: bottom;
+  height: 120px;
+  width: 120px
+  }
+  .area-gray{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 20px;
+  background-color: #e2e2e2;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  color: black;
+  font-size: 20px;
+}
+/************************************************************/
+/******************DETAILS/SIDEBAR/HEADER*******************/
+/*'header header header header header'
+'sidebar details details details details'
+'sidebar details details details details'
+'sidebar details details details details'
+'sidebar details details details details'*/
+
+.fsize{
+  margin: 20px;
+}
+
+.fpsize{
+  width: auto;
+}
+.DetailswS{
+  grid-area: 2/1/span 5/ span 5;
+  display:grid;
+  grid-template-areas:
+  'left right';
+  grid-template-columns: 300px auto;
+}
+.details{
+  grid-area: right;
+  display: grid;
+  grid-template-rows: auto  auto;
+  grid-template-columns:1fr 1fr;
+  grid-template-areas:
+  'ul ur'
+  'lower lower'
+
+}
+
+#ul{
+  grid-area: ul;
+
+}
+#ur{
+  grid-area: ur;
+  background-color: #ffc04d;
+}
+
+#l{
+  grid-area: lower;
+}
+
+
+
+.ingred{
+  float: right;
+  max-width: 400px;
+  padding: 20px;
+  margin: 20px;
+  display: grid;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  grid-template-rows: 1fr 7fr 2fr ;
+  grid-template-columns: 1fr 9fr;
+  /*grid-row-gap: 1em;*/
+  grid-template-areas:
+  'head head'
+  'amount desc'
+  'adds totprice'
+}
+.ingredtxt{margin: 20px}
+
+#head{
+  grid-area: head;
+}
+#amount{
+  grid-area: amount;
+}
+#desc{
+  grid-area: desc;
+}
+#adds{
+  grid-area: adds;
+  align-content:bottom;
+}
+#totprice{
+  grid-area: totprice;
+}
+
+
+
+/************************************************************/
+/**********************OVERVIEW******************************/
+/*'header header header'
+'overview overview overview'
+'overview overview overview'
+'overview overview overview'
+'overview overview overview'
+'overview overview overview'*/
+
+.Overview{/*come back and change so elements are next to eachother*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  /*height:100vh; */
+  grid-area: 2 / 1 / span 5 / span 5;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows:min-content auto;
+  grid-template-areas:
+  'h2 h2 h2 h2 h2'
+  'overview overview overview overview overview'}
+
+.h2{
+  max-height: 100px;
+  grid-area: h2;
+  display: grid;
+  grid-template-areas:
+  'left right';
+  border-bottom: solid black;
+}
+
+.overview{
+
+  grid-area: overview;
+    display: grid;
+    grid-template-rows:2fr min-content;
+    grid-template-columns: 8fr 2fr;
+    /*grid-row-gap: 1em;*/
+    grid-template-areas:
+    'L R'
+    'print print'
+} /*ändra om den här så att overview är en vy i vyer*/
+  .L{grid-area:L;
+    border-bottom: solid black;
+    border-right: solid black;}
+  .R{grid-area:R; border-bottom: solid black; }
+.left{grid-area:left;}
+
+.right{grid-area:right; justify-self: end;}
+
+.print{grid-area: print; justify-self: center;}
+
+.back-btn{
+
+  background-color: #ffc04d;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  color: black;
+  padding: 15px 32px;
+  height: 50px;
+  width:300px;
+  text-align: center;
+
+  align-self:center; /*why dosent this work??*/
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+/************************************************************/
+/***************PRINTOUT**************************************/
+.Printout{
+  grid-area: 2 / 1 / span 5 / span 5;
+  grid-template-columns: auto;
+  grid-auto-rows: auto;
+  grid-template-areas:
+  'h2 h2 h2 h2 h2'
+  'print print print print print'
+
+}
+.left{grid-area:left;} /* dessa 2 rader -> för h2, se om du behöver göra om den*/
+.right{grid-area:right; justify-self:end; align-self: center;}
+.wrapper{
+  grid-area:print;
+ display: grid;
+ grid-template-columns:1fr 1fr;
+ grid-template-rows: auto;
+ grid-template-areas:
+ 'fig1  prep1'
+
+}
+/*' */
+figure {
+  display: flex;
+  align-items: center;
+  grid-area:figure;
+}
+.img{height:200px; width: 200px; margin:20px;}
+.fig1{grid-area:fig1;}
+.fig2{grid-area:fig2;}
+.fig3{grid-area:fig3;}
+.fig4{grid-area:fig4;}
+/*.fig5{grid-area:fig5;}*/
+.prep1{grid-area:prep1; background-color:  #c4feff; text-align: center;}
+.prep2{grid-area:prep2;background-color:  #c4feff; text-align: center;}
+.prep3{grid-area:prep3;background-color:  #c4feff; text-align: center;}
+.prep4{grid-area:prep4;background-color:  #c4feff; text-align: center;}
+/*.prep5{grid-area:prep5; background-color:  #c4feff; text-align: center;} */
+
+/************************************************************/
+
+.button-img{
+  height: 220px;
+  width: 220px;
+  background-color: #ffc04d;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.btn-txt{
+  vertical-align: bottom;
+  height: 120px;
+  width: 120px;
+}
+/*hamburgermenu*/
+label{
+  font-size: 20px;
+  display: none;
+}
+#toggle{ display:none;}
+@media only screen and (max-width: 600px){
+
+  .App{
+    overflow: auto;
+    grid-template-rows: 80px 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+  }
+  img{height: auto; width: 400px;}
+  .Sidebar{ grid-area: left;
+  border-right: None;
+  border-bottom: solid black;
+}
+
+  /*hamburgermenu*/
+  label{
+    font-size: 30px;
+    display: block;
+    cursor: pointer;
+    float:right;
+    margin:10px;
+  }
+  .innerCont{display:none; width: auto;}
+  #toggle:checked~.innerCont{display:block;}
+
+
+.App-header{grid-area: 1 / 1 / span 1 / span 1;
+  background-color: #e2e2e2;
+  text-align: center;}
+  .remainder{
+    grid-template-areas:
+    'left'
+    'right';
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto;
+  }
+  .SelectDish{
+  grid-area: right;}
+  .Dishes{  grid-area:right;}
+  /*details-phone*/
+  .Details{grid-area: 3 / 1 / span 1 / span 1;}
+  .DetailswS{
+    max-width: min-content;
+    display:grid;
+    grid-template-areas:
+    'left'
+    'right';
+    grid-template-columns:min-content;
+    grid-template-rows:min-content auto;
+
+  }
+  .details{
+    display: grid;
+    grid-template-rows:auto auto auto;
+    grid-template-columns: auto;
+
+
+    grid-template-areas:
+    'ul'
+    'ur'
+    'lower'
+  }
+  .ingred{width: auto;}
+  /*overview phone*/
+  .Overview{ grid-area: 2 / 1 / span /1 span /1 }
+  .overview{
+    grid-template-rows:15fr 1fr 1fr;
+    grid-template-columns: auto;
+    /*grid-row-gap: 1em;*/
+    grid-template-areas:
+    'L'
+    'R'
+    'print'
+    }
+    .L{grid-area:L; border-bottom: solid black;/*justify-self: center; dosent work... */;}
+    .R{grid-area:R; border-bottom: solid black;}
+  .print{grid-area: print; justify-self: center;}
+
+  /*printout*/
+  .Printout{grid-area:2 / 1 / span /1 span /1;}
+  .wrapper{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+   grid-template-areas:
+   'fig1'
+   'prep1'
+ }
+
+ figure {
+     display: inline-block;
+     margin: 10px;
+     border: 3px solid blue;
+ }
+ figure img {
+   /*  justify-self: center;
+     vertical-align: top; */
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+
+ }
+ figure figcaption {
+     text-align: center;
+     background-color:  #fcf5f5;
+ }
+
+
+ .fig1{grid-area:fig1;}
+ .prep1{grid-area:prep1;margin: 10px;}
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0
+}
+
+.button {
+  background-color: #ffc04d;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+.space{
+
+height: 100%;
+text-align: center;
+
+
+}
+
+.mid-txt{
+  position: relative;
+  left: 25%;
+  right: 25%;
+  transform: translateX(-50%);
+
+}
+.btmbrdr{
+  border-bottom: solid black;
+}
+.Welcome{
+  height: 100%;
+}
